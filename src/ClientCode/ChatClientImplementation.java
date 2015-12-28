@@ -13,7 +13,7 @@ import java.rmi.server.UnicastRemoteObject;
  * @author grahamm
  */
 public class ChatClientImplementation extends UnicastRemoteObject 
-                                            implements ChatClientInterface
+                                            implements ChatClientCallback
 {
     private String firstName;
    
@@ -31,6 +31,6 @@ public class ChatClientImplementation extends UnicastRemoteObject
     
     public void displayNotification(String notification) throws RemoteException
     {
-        System.out.println("Message from BankServer: " + notification);
+        System.out.println("Message from ChatServer: " + notification);
     }
 }

@@ -5,11 +5,10 @@
  */
 package ServerServiceCode;
 
-import ClientCode.ChatClientInterface;
-import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
+import ClientCode.ChatClientCallback;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
+
 
 /**
  *
@@ -30,12 +29,12 @@ public interface UserCommandsInInterface extends Remote {
 
     public boolean login(String firstName,  String password) throws RemoteException;
 
-    public boolean sendPmMail(String from, String to, String body, String subject) throws RemoteException;
+ //   public boolean sendPmMail(String from, String to, String body, String subject) throws RemoteException;
    // public ArrayList<ChatMessage> getPmSentEmails(String sender) throws RemoteException;
  //   public ArrayList<ChatMessage> getPmReceivedEmails(String receiver) throws RemoteException;
     // CALLBACK METHODS
 
-    public boolean registerForCallbacks(ChatClientInterface newClient) throws RemoteException;
+    public boolean registerForCallbacks(ChatClientCallback newClient) throws RemoteException;
 
-    public boolean unregisterForCallbacks(ChatClientInterface exitingClient) throws RemoteException;
+    public boolean unregisterForCallbacks(ChatClientCallback exitingClient) throws RemoteException;
 }
